@@ -11,9 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141121083549) do
+ActiveRecord::Schema.define(version: 20141121090401) do
+
+  create_table "cookied_browsers", force: true do |t|
+  end
 
   create_table "requests", force: true do |t|
+    t.integer "cookied_browser_id"
   end
 
 end

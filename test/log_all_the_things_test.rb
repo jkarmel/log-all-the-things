@@ -20,4 +20,16 @@ class LogAllTheThingsTest < ActionController::TestCase
       get :index
     end
   end
+
+  test "requests have cookied devices" do
+    get :index
+    assert_not_nil Request.first.cookied_browser
+  end
+
+  test "when two requests are made they have references to the same cookied devices" do
+    get :index
+    get :index
+    assert_equal Request.first.cookied_browser, Request.last.cookied_browser
+  end
+
 end
