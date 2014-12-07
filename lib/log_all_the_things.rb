@@ -5,7 +5,7 @@ end
 
 
 class Request < ActiveRecord::Base
-  belongs_to :cookied_browser
+  belongs_to :browser, class_name: 'CookiedBrowser', foreign_key: :cookied_browser_id
 end
 
 class Event < ActiveRecord::Base

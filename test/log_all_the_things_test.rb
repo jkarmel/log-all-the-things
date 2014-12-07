@@ -39,13 +39,13 @@ class LogAllTheThingsTest < Minitest::Test
 
     test "requests have cookied devices" do
       get :do_nothing
-      assert_not_nil Request.first.cookied_browser
+      assert_not_nil Request.first.browser
     end
 
     test "when two requests are made they have references to the same cookied devices" do
       get :do_nothing
       get :do_nothing
-      assert_equal Request.first.cookied_browser, Request.last.cookied_browser
+      assert_equal Request.first.browser, Request.last.browser
     end
   end
 
