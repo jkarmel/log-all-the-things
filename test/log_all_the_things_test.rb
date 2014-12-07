@@ -3,7 +3,7 @@ require 'test_helper'
 
 
 
-class TestController < ActionController::Base
+class TestController < ApplicationController
   def do_nothing
     render text: 'hi'
   end
